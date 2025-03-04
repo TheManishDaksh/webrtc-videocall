@@ -9,7 +9,8 @@ server.on("connection", function(socket){
     socket.onerror=(error)=>{
         console.log(error);
     }
-    socket.send("connected to server");
+    socket.send(JSON.stringify("connected to server"));
+    console.log("connected server")
     
     socket.onmessage=(event:any)=>{
         const message = JSON.parse(event.data);
